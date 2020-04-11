@@ -9,6 +9,19 @@
 #ifndef Strings_h
 #define Strings_h
 
-#define ENDPOINT @"http://138.197.192.122:8080/"
+/*
+ messages
+ */
+#define ERROR @"Error"
+#define ERROR_CODE_NOT_EXISTS @"There is no questions for provided invitation code!"
+#define ERROR_CODE_EMPTY @"Quizz code is empty"
+
+#define ERROR_CONNECTION @"Something went wrong. Please try again ..."
+
+/*
+ urls definitions
+ */
+#define ENDPOINT @"https://api.goquizzy.app:8080"
 #define QUESTIONPATH @"/questions?invitationCode="
+#define DEVICEID_URL @"https://api.goquizzy.app:8080/generateDeviceId"
 #endif /* Strings_h */

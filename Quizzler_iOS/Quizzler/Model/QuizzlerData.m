@@ -16,28 +16,34 @@
 
 @implementation QuizzlerData
 
-+ (NSURLSessionDataTask *)requestQuestionsByID:(UsersResponseBlock)completion
-{
++ (NSURLSessionDataTask *) generateDeviceId:(UsersResponseBlock)completion{
+    NSString *urlString = [NSString stringWithFormat:@"%@", DEVICEID_URL];
+    
     APIRequest *request = [[APIRequest alloc] init];
+    [request setResponseClass:[JSONAPIResponse class]];
+    [request setUrl:[NSURL URLWithString:urlString]];
+    [request setMethod:GET];
+    
     NSURLSession *session = [NSURLSession sharedSession];
-    [request setUrl:[NSURL URLWithString:ENDPOINT]];
-    [request setPath:QUESTIONPATH];
     NSURLSessionDataTask *task = [session dataTaskWithAPIRequest:request completion:completion];
     [task resume];
     return task;
 }
 
 
-//+ (NSURLSessionDataTask *) requestQuestionsByID: (NSString *) qid {
-//    NSURLSession *session = [NSURLSession sharedSession];
-//    APIRequest *request = [[APIRequest alloc] init];
-//    [request setUrl:[NSURL URLWithString:ENDPOINT]];
-//    [request setPath:QUESTIONPATH];
-//    NSURLSessionDataTask *dataTask = [session dataTaskWithAPIRequest:request completion:^(id<APIResponse> response) {
-//
-//    }];
-//
-//    return dataTask;
-//}
++ (NSURLSessionDataTask *)requestQuestionsByID:(NSString*) quizzId complition:(UsersResponseBlock)completion
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@%@%@", ENDPOINT, QUESTIONPATH, quizzId];
+    
+    APIRequest *request = [[APIRequest alloc] init];
+    [request setResponseClass:[JSONAPIResponse class]];
+    [request setUrl:[NSURL URLWithString:urlString]];
+    [request setMethod:GET];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithAPIRequest:request completion:completion];
+    [task resume];
+    return task;
+}
 
 @end

@@ -15,17 +15,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@Copyright" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMv-mF-KQi">
-                                <rect key="frame" x="179" y="830" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020, Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMv-mF-KQi">
+                                <rect key="frame" x="129.5" y="836" width="155" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHh-2k-ZkU">
+                                <rect key="frame" x="50" y="279" width="314" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Az8-vt-emu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" textContentType="postal-code"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="RYg-ln-PMO"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWr-QU-sNp">
+                                <rect key="frame" x="50" y="354" width="314" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="esZ-MU-46w"/>
+                                </constraints>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZn-g7-7hZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provide your quizz code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqg-IC-Z4a">
+                                <rect key="frame" x="48" y="84" width="318" height="30"/>
+                                <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="L6K-8r-G3W">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="color" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YWr-QU-sNp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="DKh-iN-FGD"/>
+                            <constraint firstItem="Iqg-IC-Z4a" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Fup-RM-i6w"/>
+                            <constraint firstItem="L6K-8r-G3W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JPv-9a-4rr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cHh-2k-ZkU" secondAttribute="trailing" constant="50" id="OeQ-MT-JjD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="L6K-8r-G3W" secondAttribute="bottom" id="Qt4-5R-JF6"/>
+                            <constraint firstItem="cHh-2k-ZkU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="235" id="UhW-4K-jRB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L6K-8r-G3W" secondAttribute="trailing" id="Yxi-7K-qAc"/>
+                            <constraint firstItem="cHh-2k-ZkU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bQz-Ki-Y6h"/>
+                            <constraint firstItem="qMv-mF-KQi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cet-ur-qzG"/>
+                            <constraint firstItem="YWr-QU-sNp" firstAttribute="top" secondItem="cHh-2k-ZkU" secondAttribute="bottom" constant="30" id="cvG-iv-hQr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YWr-QU-sNp" secondAttribute="trailing" constant="50" id="tmp-Ti-7af"/>
+                            <constraint firstItem="Iqg-IC-Z4a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="uvQ-GT-5WK"/>
+                            <constraint firstItem="L6K-8r-G3W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vOQ-MX-spq"/>
+                            <constraint firstItem="YWr-QU-sNp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wAF-or-78z"/>
+                            <constraint firstItem="cHh-2k-ZkU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="wQ0-TG-pt7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qMv-mF-KQi" secondAttribute="bottom" constant="5" id="wxL-b6-dCE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="L6K-8r-G3W" id="LjY-7m-5QX"/>
+                        <outlet property="quizzCodeTextField" destination="cHh-2k-ZkU" id="8F0-3x-uPJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

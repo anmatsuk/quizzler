@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "APIResponse.h"
 
-typedef void(^UsersResponseBlock)(SimpleAPIResponse *response);
+typedef void(^UsersResponseBlock)(id<APIResponse> response);
 
 @interface QuizzlerData : NSObject
 
-+ (NSURLSessionDataTask *)requestQuestionsByID:(UsersResponseBlock)completion;
-
++ (NSURLSessionDataTask *)requestQuestionsByID:(NSString*) quizzId complition:(UsersResponseBlock)completion;
++ (NSURLSessionDataTask *) generateDeviceId:(UsersResponseBlock)completion;
 @end
