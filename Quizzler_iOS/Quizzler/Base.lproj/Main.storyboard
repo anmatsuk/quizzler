@@ -16,34 +16,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020, Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMv-mF-KQi">
-                                <rect key="frame" x="129.5" y="836" width="155" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="133" y="840" width="148" height="17"/>
+                                <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHh-2k-ZkU">
-                                <rect key="frame" x="50" y="279" width="314" height="45"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHh-2k-ZkU">
+                                <rect key="frame" x="50" y="430.5" width="314" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Az8-vt-emu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" textContentType="postal-code"/>
+                                <textInputTraits key="textInputTraits" textContentType="tel"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="RYg-ln-PMO"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWr-QU-sNp">
-                                <rect key="frame" x="50" y="354" width="314" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWr-QU-sNp">
+                                <rect key="frame" x="120" y="505.5" width="174" height="55"/>
+                                <color key="backgroundColor" red="0.082352941176470587" green="0.49803921568627452" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="esZ-MU-46w"/>
+                                    <constraint firstAttribute="height" constant="55" id="esZ-MU-46w"/>
                                 </constraints>
-                                <state key="normal" title="Go"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Go Quizzy!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="nextButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZn-g7-7hZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provide your quizz code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqg-IC-Z4a">
-                                <rect key="frame" x="48" y="84" width="318" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input your Invitation code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqg-IC-Z4a">
+                                <rect key="frame" x="40.5" y="375.5" width="333" height="30"/>
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="30"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -55,18 +61,18 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="YWr-QU-sNp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="DKh-iN-FGD"/>
+                            <constraint firstItem="YWr-QU-sNp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="DKh-iN-FGD"/>
+                            <constraint firstItem="cHh-2k-ZkU" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="FmS-e8-aTm"/>
                             <constraint firstItem="Iqg-IC-Z4a" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Fup-RM-i6w"/>
                             <constraint firstItem="L6K-8r-G3W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JPv-9a-4rr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cHh-2k-ZkU" secondAttribute="trailing" constant="50" id="OeQ-MT-JjD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="L6K-8r-G3W" secondAttribute="bottom" id="Qt4-5R-JF6"/>
-                            <constraint firstItem="cHh-2k-ZkU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="235" id="UhW-4K-jRB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L6K-8r-G3W" secondAttribute="trailing" id="Yxi-7K-qAc"/>
                             <constraint firstItem="cHh-2k-ZkU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bQz-Ki-Y6h"/>
                             <constraint firstItem="qMv-mF-KQi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cet-ur-qzG"/>
                             <constraint firstItem="YWr-QU-sNp" firstAttribute="top" secondItem="cHh-2k-ZkU" secondAttribute="bottom" constant="30" id="cvG-iv-hQr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YWr-QU-sNp" secondAttribute="trailing" constant="50" id="tmp-Ti-7af"/>
-                            <constraint firstItem="Iqg-IC-Z4a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="uvQ-GT-5WK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YWr-QU-sNp" secondAttribute="trailing" constant="120" id="tmp-Ti-7af"/>
+                            <constraint firstItem="Iqg-IC-Z4a" firstAttribute="bottom" secondItem="cHh-2k-ZkU" secondAttribute="top" constant="-25" id="uvQ-GT-5WK"/>
                             <constraint firstItem="L6K-8r-G3W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vOQ-MX-spq"/>
                             <constraint firstItem="YWr-QU-sNp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wAF-or-78z"/>
                             <constraint firstItem="cHh-2k-ZkU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="wQ0-TG-pt7"/>
@@ -76,6 +82,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="L6K-8r-G3W" id="LjY-7m-5QX"/>
+                        <outlet property="goQuizzlyButton" destination="YWr-QU-sNp" id="kUq-sp-oSW"/>
                         <outlet property="quizzCodeTextField" destination="cHh-2k-ZkU" id="8F0-3x-uPJ"/>
                     </connections>
                 </viewController>

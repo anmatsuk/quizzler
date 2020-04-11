@@ -22,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.goQuizzlyButton.layer.cornerRadius = 6;
+    self.quizzCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
 
     
     

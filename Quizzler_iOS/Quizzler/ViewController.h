@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *quizzCodeTextField;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *goQuizzlyButton;
 
 @end
 

@@ -20,6 +20,8 @@
 		DE0D90E32440015A00223FA0 /* APIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E22440015A00223FA0 /* APIResponse.m */; };
 		DE0D90E6244004D100223FA0 /* NSURLSession+APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E5244004D100223FA0 /* NSURLSession+APIClient.m */; };
 		DE0D90EA244037F600223FA0 /* QuizzlerData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E9244037F600223FA0 /* QuizzlerData.m */; };
+		DE81D1EF24418F5600215A5E /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D1ED24418F5600215A5E /* QuestionViewController.m */; };
+		DE81D1F024418F5600215A5E /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE81D1EE24418F5600215A5E /* QuestionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,9 @@
 		DE0D90E5244004D100223FA0 /* NSURLSession+APIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+APIClient.m"; sourceTree = "<group>"; };
 		DE0D90E8244037F600223FA0 /* QuizzlerData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizzlerData.h; sourceTree = "<group>"; };
 		DE0D90E9244037F600223FA0 /* QuizzlerData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizzlerData.m; sourceTree = "<group>"; };
+		DE81D1EC24418F5600215A5E /* QuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
+		DE81D1ED24418F5600215A5E /* QuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
+		DE81D1EE24418F5600215A5E /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,7 @@
 		DE0D90BC243FF32F00223FA0 /* Quizzler */ = {
 			isa = PBXGroup;
 			children = (
+				DE81D1EB24418F2B00215A5E /* Controller */,
 				DE0D90E72440370300223FA0 /* Model */,
 				DE0D90D9243FF36800223FA0 /* Networking */,
 				DE0D90BD243FF32F00223FA0 /* AppDelegate.h */,
@@ -120,6 +126,16 @@
 				DE0D90E9244037F600223FA0 /* QuizzlerData.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DE81D1EB24418F2B00215A5E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE81D1EC24418F5600215A5E /* QuestionViewController.h */,
+				DE81D1ED24418F5600215A5E /* QuestionViewController.m */,
+				DE81D1EE24418F5600215A5E /* QuestionViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +197,7 @@
 			files = (
 				DE0D90D0243FF33300223FA0 /* LaunchScreen.storyboard in Resources */,
 				DE0D90CD243FF33300223FA0 /* Assets.xcassets in Resources */,
+				DE81D1F024418F5600215A5E /* QuestionViewController.xib in Resources */,
 				DE0D90C8243FF32F00223FA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +215,7 @@
 				DE0D90C5243FF32F00223FA0 /* ViewController.m in Sources */,
 				DE0D90E0243FFE4000223FA0 /* APIRequest.m in Sources */,
 				DE0D90DC243FF60700223FA0 /* HTTPMethod.m in Sources */,
+				DE81D1EF24418F5600215A5E /* QuestionViewController.m in Sources */,
 				DE0D90BF243FF32F00223FA0 /* AppDelegate.m in Sources */,
 				DE0D90C2243FF32F00223FA0 /* SceneDelegate.m in Sources */,
 				DE0D90CB243FF32F00223FA0 /* Quizzler.xcdatamodeld in Sources */,
