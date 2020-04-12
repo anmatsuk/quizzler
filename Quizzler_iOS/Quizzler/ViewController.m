@@ -12,6 +12,9 @@
 #import "Strings.h"
 
 @interface ViewController () {
+    
+    UIGestureRecognizer *tapper;
+    
     NSArray *questions;
     NSString *quizzlerId;
     NSNumber *width;
@@ -26,9 +29,10 @@
     [super viewDidLoad];
     self.goQuizzlyButton.layer.cornerRadius = 6;
     self.quizzCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
-
-    
-    
+    tapper = [[UITapGestureRecognizer alloc]
+              initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapper];
 }
 
 
@@ -68,6 +72,12 @@
 
     return NO;
 }
+
+// Dissmiss Keyboard
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender {
+    [self.view endEditing:YES];
+}
+
 #pragma mark -
 #pragma mark: Segue
 

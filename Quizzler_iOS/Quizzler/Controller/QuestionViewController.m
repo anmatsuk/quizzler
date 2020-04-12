@@ -103,9 +103,11 @@
 
 - (IBAction)answerButtonAction:(id)sender {
     //need to send answer to server
-    switch ([sender tag]) {
-        case 1: {
-            int i = 0;
+    NSInteger value = [sender tag];
+    switch (value) {
+        case 5: {
+            [self.navigationController popViewControllerAnimated:YES];
+            return;
         }
             
             break;

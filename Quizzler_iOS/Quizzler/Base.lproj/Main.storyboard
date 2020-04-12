@@ -91,7 +91,7 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
-        <!--Question number-->
+        <!--Question View Controller-->
         <scene sceneID="1Jo-sI-6Bz">
             <objects>
                 <viewController id="EU5-XU-Hmd" customClass="QuestionViewController" sceneMemberID="viewController">
@@ -189,7 +189,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uQD-tt-tx0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Question number" id="1F1-kb-dFN"/>
+                    <navigationItem key="navigationItem" id="1F1-kb-dFN"/>
                     <connections>
                         <outlet property="answerButton1" destination="p74-og-f8P" id="K0R-G4-Cj9"/>
                         <outlet property="answerButton2" destination="Ahr-Yc-VbX" id="Noa-ok-dsD"/>
