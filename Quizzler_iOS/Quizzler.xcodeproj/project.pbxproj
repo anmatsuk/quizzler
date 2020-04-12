@@ -21,7 +21,6 @@
 		DE0D90E6244004D100223FA0 /* NSURLSession+APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E5244004D100223FA0 /* NSURLSession+APIClient.m */; };
 		DE0D90EA244037F600223FA0 /* QuizzlerData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E9244037F600223FA0 /* QuizzlerData.m */; };
 		DE81D1EF24418F5600215A5E /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D1ED24418F5600215A5E /* QuestionViewController.m */; };
-		DE81D1F024418F5600215A5E /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE81D1EE24418F5600215A5E /* QuestionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +50,6 @@
 		DE0D90E9244037F600223FA0 /* QuizzlerData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizzlerData.m; sourceTree = "<group>"; };
 		DE81D1EC24418F5600215A5E /* QuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
 		DE81D1ED24418F5600215A5E /* QuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
-		DE81D1EE24418F5600215A5E /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +131,6 @@
 			children = (
 				DE81D1EC24418F5600215A5E /* QuestionViewController.h */,
 				DE81D1ED24418F5600215A5E /* QuestionViewController.m */,
-				DE81D1EE24418F5600215A5E /* QuestionViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,7 +194,6 @@
 			files = (
 				DE0D90D0243FF33300223FA0 /* LaunchScreen.storyboard in Resources */,
 				DE0D90CD243FF33300223FA0 /* Assets.xcassets in Resources */,
-				DE81D1F024418F5600215A5E /* QuestionViewController.xib in Resources */,
 				DE0D90C8243FF32F00223FA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

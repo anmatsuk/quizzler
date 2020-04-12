@@ -7,12 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "QuestionViewController.h"
 #import "QuizzlerData.h"
 #import "Strings.h"
 
 @interface ViewController () {
-    NSMutableArray *questions;
+    NSArray *questions;
     NSString *quizzlerId;
+    NSNumber *width;
 }
 
 
@@ -30,6 +32,14 @@
 }
 
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.quizzCodeTextField.text = @"";
+    [self.activityIndicator stopAnimating];
+    
+    
+    //need to hide keyboard if visible
+}
 
 - (IBAction)nextButtonAction:(id)sender {
     quizzlerId = [self.quizzCodeTextField text];
@@ -57,6 +67,16 @@
     }
 
     return NO;
+}
+#pragma mark -
+#pragma mark: Segue
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showQuestionViewController"]) {
+        QuestionViewController *vc = [segue destinationViewController];
+        [vc setQuestions:questions];
+        
+    }
 }
 
 #pragma mark -
@@ -98,13 +118,14 @@
                     [self showAlertMessageWithTitle:ERROR withMessage:ERROR_CONNECTION];
                 }
                 else {
+                    
                     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-                
+                    
                     if(httpResponse.statusCode == 200) {
                         NSLog(@"%@", @"We got question list keep moving to the nex screen");
                         NSError *parseError = nil;
-                        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:[response responseObject] options:0 error:&parseError];
-                    
+                        self->questions = [NSJSONSerialization JSONObjectWithData:[response responseObject] options:0 error:&parseError];
+                        [self performSegueWithIdentifier:@"showQuestionViewController" sender:self];
                     }
                     else {
                         [self showAlertMessageWithTitle:ERROR withMessage:ERROR_CODE_NOT_EXISTS];

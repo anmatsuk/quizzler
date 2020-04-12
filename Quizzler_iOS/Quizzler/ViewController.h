@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *goQuizzlyButton;
+@property (weak, nonatomic) IBOutlet UILabel *privacyPolicyLabel;
 
 @end
 

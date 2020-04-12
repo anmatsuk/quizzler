@@ -18,6 +18,7 @@
 
 #define ERROR_CONNECTION @"Something went wrong. Please try again ..."
 
+#define FINISH_MESSAGE @"Congratulations! \n You've successfully finished your quiz."
 /*
  urls definitions
  */
