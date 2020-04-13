@@ -16,6 +16,14 @@
 {
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[request url]];
     [urlRequest setHTTPMethod:HTTPMethodString([request method])];
+    if ([request params]) {
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+
+        NSData *jsonBodyData = [NSJSONSerialization dataWithJSONObject:[request params] options:kNilOptions error:nil];
+        [urlRequest setHTTPBody:jsonBodyData];
+
+    }
     __block NSURLSessionDataTask *dataTask;
     dataTask = [self dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {

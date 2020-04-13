@@ -15,4 +15,5 @@ typedef void(^UsersResponseBlock)(id<APIResponse> response);
 
 + (NSURLSessionDataTask *)requestQuestionsByID:(NSString*) quizzId complition:(UsersResponseBlock)completion;
 + (NSURLSessionDataTask *) generateDeviceId:(UsersResponseBlock)completion;
++ (NSURLSessionDataTask *) sendQuestionResponse: (NSDictionary*) params withComplition: (UsersResponseBlock) completion;
 @end

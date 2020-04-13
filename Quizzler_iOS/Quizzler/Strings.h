@@ -25,4 +25,5 @@
 #define ENDPOINT @"https://api.goquizzy.app:8080"
 #define QUESTIONPATH @"/questions?invitationCode="
 #define DEVICEID_URL @"https://api.goquizzy.app:8080/generateDeviceId"
+#define POLICY_LINK @"https://api.goquizzy.app/PrivacyPolicy.html"
 #endif /* Strings_h */

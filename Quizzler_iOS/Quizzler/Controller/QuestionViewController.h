@@ -12,9 +12,13 @@
 
 @property NSArray *questions;
 
+@property NSString* quizzlerId;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *questionTextBottomConstraint;
+
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UILabel *questionText;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressBarWidth;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *answerButton1;

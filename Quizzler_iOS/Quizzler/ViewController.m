@@ -12,9 +12,7 @@
 #import "Strings.h"
 
 @interface ViewController () {
-    
     UIGestureRecognizer *tapper;
-    
     NSArray *questions;
     NSString *quizzlerId;
     NSNumber *width;
@@ -27,6 +25,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"2020, Privacy Policy" attributes:nil];
+    NSRange linkRange = NSMakeRange(0, [attributedString length]); // for the word "link" in the string above
+    NSDictionary *linkAttributes = @{ NSForegroundColorAttributeName : [UIColor colorWithRed:0.05 green:0.4 blue:0.65 alpha:1.0],
+                                      NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle) };
+    [attributedString setAttributes:linkAttributes range:linkRange];
+    self.privacyPolicyLabel.attributedText = attributedString;
+    self.privacyPolicyLabel.userInteractionEnabled = YES;
+    [self.privacyPolicyLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapOnLabel:)]];
+    
     self.goQuizzlyButton.layer.cornerRadius = 6;
     self.quizzCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
     tapper = [[UITapGestureRecognizer alloc]
@@ -40,9 +48,7 @@
     [super viewWillAppear:animated];
     self.quizzCodeTextField.text = @"";
     [self.activityIndicator stopAnimating];
-    
-    
-    //need to hide keyboard if visible
+    questions = nil;
 }
 
 - (IBAction)nextButtonAction:(id)sender {
@@ -85,12 +91,23 @@
     if ([[segue identifier] isEqualToString:@"showQuestionViewController"]) {
         QuestionViewController *vc = [segue destinationViewController];
         [vc setQuestions:questions];
-        
+        [vc setQuizzlerId:quizzlerId];
     }
 }
 
 #pragma mark -
 #pragma mark: Functions
+
+- (void)handleTapOnLabel:(UITapGestureRecognizer *)tapGesture
+{
+    NSURL *URL = [NSURL URLWithString:POLICY_LINK];
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)]) {
+        [[UIApplication sharedApplication] openURL:URL options:@{}
+           completionHandler:^(BOOL success) {
+        }];
+    }
+}
+
 - (void) startQuestions{
     NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:@"deviceId"]) {
@@ -124,7 +141,7 @@
             [self->_activityIndicator stopAnimating];
             if (response) {
                 if (response.error) {
-                    [self->_activityIndicator stopAnimating];
+                    //[self->_activityIndicator stopAnimating];
                     [self showAlertMessageWithTitle:ERROR withMessage:ERROR_CONNECTION];
                 }
                 else {
