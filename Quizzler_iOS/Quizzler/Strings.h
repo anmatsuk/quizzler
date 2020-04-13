@@ -15,10 +15,10 @@
 #define ERROR @"Error"
 #define ERROR_CODE_NOT_EXISTS @"There is no questions for provided invitation code!"
 #define ERROR_CODE_EMPTY @"Quizz code is empty"
-
 #define ERROR_CONNECTION @"Something went wrong. Please try again ..."
-
 #define FINISH_MESSAGE @"Congratulations! \n You've successfully finished your quiz."
+
+#define PRIVACY_POLICY_TEXT @"2020, Privacy Policy"
 /*
  urls definitions
  */

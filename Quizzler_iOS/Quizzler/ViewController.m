@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"2020, Privacy Policy" attributes:nil];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:PRIVACY_POLICY_TEXT attributes:nil];
     NSRange linkRange = NSMakeRange(0, [attributedString length]); // for the word "link" in the string above
     NSDictionary *linkAttributes = @{ NSForegroundColorAttributeName : [UIColor colorWithRed:0.05 green:0.4 blue:0.65 alpha:1.0],
                                       NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle) };
