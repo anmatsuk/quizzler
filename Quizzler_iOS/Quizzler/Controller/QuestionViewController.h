@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLAnimatedImageView.h"
+#import "AnswerButton.h"
 
 @interface QuestionViewController : UIViewController 
+@property (weak, nonatomic) IBOutlet FLAnimatedImageView *gifActivityIndicator;
+@property (weak, nonatomic) IBOutlet UIView *gifBackgroudView;
+@property (weak, nonatomic) IBOutlet UIVisualEffectView *blurView;
+
 
 @property NSArray *questions;
 
@@ -20,11 +26,11 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressBarWidth;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
-
-@property (weak, nonatomic) IBOutlet UIButton *answerButton1;
-@property (weak, nonatomic) IBOutlet UIButton *answerButton2;
-@property (weak, nonatomic) IBOutlet UIButton *answerButton3;
-@property (weak, nonatomic) IBOutlet UIButton *answerButton4;
-@property (weak, nonatomic) IBOutlet UIButton *doneButton;
+//buttons:
+@property (weak, nonatomic) IBOutlet AnswerButton *answerButton1;
+@property (weak, nonatomic) IBOutlet AnswerButton *answerButton2;
+@property (weak, nonatomic) IBOutlet AnswerButton *answerButton3;
+@property (weak, nonatomic) IBOutlet AnswerButton *answerButton4;
+@property (weak, nonatomic) IBOutlet AnswerButton *doneButton;
 
 @end

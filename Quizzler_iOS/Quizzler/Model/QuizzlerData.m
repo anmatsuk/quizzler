@@ -52,7 +52,6 @@
     [request setResponseClass:[JSONAPIResponse class]];
     [request setUrl:[NSURL URLWithString:urlString]];
     [request setMethod:PUT];
-    //request.params = params;
     [request setParams:params];
     
     NSURLSession *session = [NSURLSession sharedSession];

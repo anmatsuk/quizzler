@@ -9,6 +9,7 @@
 #import "QuestionViewController.h"
 #import "QuizzlerData.h"
 #import "Strings.h"
+#import "FLAnimatedImage.h"
 
 @interface QuestionViewController () {
     int questionIndex;
@@ -25,6 +26,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    //cat animation
+    NSBundle* bundle = [NSBundle mainBundle];
+    NSString* filePath = [bundle pathForResource:CAT_GIF ofType:@"gif"];
+    NSData *gifData = [NSData dataWithContentsOfFile: filePath];
+    FLAnimatedImage *loadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:gifData];
+    self.gifActivityIndicator.animatedImage = loadingImage;
+    self.gifBackgroudView.layer.masksToBounds = YES;
+    self.gifBackgroudView.layer.cornerRadius = 18;
+    self.blurView.hidden = YES;
+    self.gifBackgroudView.hidden = YES;
+
+    
     params = [[NSMutableDictionary alloc] init];
     NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
     [params setValue:[defaults objectForKey:@"deviceId"] forKey:@"deviceId"];
@@ -40,7 +54,15 @@
     }
     else {
         questionIndex = (int)[[defaults objectForKey:_quizzlerId] integerValue];
-         [self updateUI];
+        if (questionIndex + 1 >= questionCount) {
+            questionIndex = 0;
+            self.questionText.text = [[self.questions objectAtIndex:questionIndex] valueForKey:@"text"];
+            self.progressBarWidth.constant = 0;
+        }
+        else {
+            [self updateUI];
+        }
+         
     }
 }
 
@@ -164,12 +186,12 @@
         case 2:
         case 3:
         case 4: {
-            [self.activityIndicator startAnimating];
+            [self catAnimationSetTo:YES];
             [params setValue:[[buttons objectAtIndex:(value - 1)] objectForKey:@"label"] forKey:@"buttonLabel"];
             [params setValue:[[buttons objectAtIndex:(value - 1)] objectForKey:@"weight"] forKey:@"buttonWeight"];
             [QuizzlerData sendQuestionResponse:params withComplition:^(id<APIResponse> response) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_activityIndicator stopAnimating];
+                    [self catAnimationSetTo:NO];
                     if (response) {
                         if (response.error) {
                             [self showAlertMessageWithTitle:ERROR withMessage:ERROR_CONNECTION];
@@ -213,6 +235,11 @@
 
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void) catAnimationSetTo:(BOOL) animation {
+    self.blurView.hidden = !animation;
+    self.gifBackgroudView.hidden = !animation;
 }
 
 @end

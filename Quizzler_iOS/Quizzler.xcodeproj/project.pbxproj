@@ -21,6 +21,10 @@
 		DE0D90E6244004D100223FA0 /* NSURLSession+APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E5244004D100223FA0 /* NSURLSession+APIClient.m */; };
 		DE0D90EA244037F600223FA0 /* QuizzlerData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E9244037F600223FA0 /* QuizzlerData.m */; };
 		DE81D1EF24418F5600215A5E /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D1ED24418F5600215A5E /* QuestionViewController.m */; };
+		DE81D1F924455E6800215A5E /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D1F724455E6700215A5E /* FLAnimatedImage.m */; };
+		DE81D1FA24455E6800215A5E /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D1F824455E6700215A5E /* FLAnimatedImageView.m */; };
+		DE81D1FE2445A79700215A5E /* cat_cropped.gif in Resources */ = {isa = PBXBuildFile; fileRef = DE81D1FD2445A79700215A5E /* cat_cropped.gif */; };
+		DE81D2012445AB3D00215A5E /* AnswerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D2002445AB3D00215A5E /* AnswerButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,13 @@
 		DE0D90E9244037F600223FA0 /* QuizzlerData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizzlerData.m; sourceTree = "<group>"; };
 		DE81D1EC24418F5600215A5E /* QuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
 		DE81D1ED24418F5600215A5E /* QuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
+		DE81D1F524455E6700215A5E /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		DE81D1F624455E6700215A5E /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		DE81D1F724455E6700215A5E /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		DE81D1F824455E6700215A5E /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		DE81D1FD2445A79700215A5E /* cat_cropped.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cat_cropped.gif; sourceTree = "<group>"; };
+		DE81D1FF2445AB3D00215A5E /* AnswerButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnswerButton.h; sourceTree = "<group>"; };
+		DE81D2002445AB3D00215A5E /* AnswerButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnswerButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +93,7 @@
 		DE0D90BC243FF32F00223FA0 /* Quizzler */ = {
 			isa = PBXGroup;
 			children = (
+				DE81D1F124455DEE00215A5E /* Library */,
 				DE81D1EB24418F2B00215A5E /* Controller */,
 				DE0D90E72440370300223FA0 /* Model */,
 				DE0D90D9243FF36800223FA0 /* Networking */,
@@ -92,6 +104,7 @@
 				DE0D90C3243FF32F00223FA0 /* ViewController.h */,
 				DE0D90C4243FF32F00223FA0 /* ViewController.m */,
 				DE0D90C6243FF32F00223FA0 /* Main.storyboard */,
+				DE81D1FD2445A79700215A5E /* cat_cropped.gif */,
 				DE0D90CC243FF33300223FA0 /* Assets.xcassets */,
 				DE0D90CE243FF33300223FA0 /* LaunchScreen.storyboard */,
 				DE0D90D1243FF33300223FA0 /* Info.plist */,
@@ -131,8 +144,21 @@
 			children = (
 				DE81D1EC24418F5600215A5E /* QuestionViewController.h */,
 				DE81D1ED24418F5600215A5E /* QuestionViewController.m */,
+				DE81D1FF2445AB3D00215A5E /* AnswerButton.h */,
+				DE81D2002445AB3D00215A5E /* AnswerButton.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		DE81D1F124455DEE00215A5E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				DE81D1F624455E6700215A5E /* FLAnimatedImage.h */,
+				DE81D1F724455E6700215A5E /* FLAnimatedImage.m */,
+				DE81D1F524455E6700215A5E /* FLAnimatedImageView.h */,
+				DE81D1F824455E6700215A5E /* FLAnimatedImageView.m */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +220,7 @@
 			files = (
 				DE0D90D0243FF33300223FA0 /* LaunchScreen.storyboard in Resources */,
 				DE0D90CD243FF33300223FA0 /* Assets.xcassets in Resources */,
+				DE81D1FE2445A79700215A5E /* cat_cropped.gif in Resources */,
 				DE0D90C8243FF32F00223FA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,8 +240,11 @@
 				DE0D90DC243FF60700223FA0 /* HTTPMethod.m in Sources */,
 				DE81D1EF24418F5600215A5E /* QuestionViewController.m in Sources */,
 				DE0D90BF243FF32F00223FA0 /* AppDelegate.m in Sources */,
+				DE81D1F924455E6800215A5E /* FLAnimatedImage.m in Sources */,
 				DE0D90C2243FF32F00223FA0 /* SceneDelegate.m in Sources */,
 				DE0D90CB243FF32F00223FA0 /* Quizzler.xcdatamodeld in Sources */,
+				DE81D2012445AB3D00215A5E /* AnswerButton.m in Sources */,
+				DE81D1FA24455E6800215A5E /* FLAnimatedImageView.m in Sources */,
 				DE0D90EA244037F600223FA0 /* QuizzlerData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

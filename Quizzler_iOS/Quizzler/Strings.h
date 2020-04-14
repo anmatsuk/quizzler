@@ -9,6 +9,9 @@
 #ifndef Strings_h
 #define Strings_h
 
+//Button
+#define GO_QUIZZ_BUTTON_TITLE @"Start"
+
 /*
  messages
  */
@@ -26,4 +29,5 @@
 #define QUESTIONPATH @"/questions?invitationCode="
 #define DEVICEID_URL @"https://api.goquizzy.app:8080/generateDeviceId"
 #define POLICY_LINK @"https://api.goquizzy.app/PrivacyPolicy.html"
+#define CAT_GIF @"cat_cropped"
 #endif /* Strings_h */

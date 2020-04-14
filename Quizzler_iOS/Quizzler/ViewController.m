@@ -25,9 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tabBarController.tabBar.hidden = NO;
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:PRIVACY_POLICY_TEXT attributes:nil];
-    NSRange linkRange = NSMakeRange(0, [attributedString length]); // for the word "link" in the string above
+    NSRange linkRange = NSMakeRange(0, [attributedString length]);
     NSDictionary *linkAttributes = @{ NSForegroundColorAttributeName : [UIColor colorWithRed:0.05 green:0.4 blue:0.65 alpha:1.0],
                                       NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle) };
     [attributedString setAttributes:linkAttributes range:linkRange];
@@ -47,18 +47,18 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.quizzCodeTextField.text = @"";
-    [self.activityIndicator stopAnimating];
+    [self.goQuizzlyButton setTitle:GO_QUIZZ_BUTTON_TITLE forState:UIControlStateNormal];
     questions = nil;
 }
 
 - (IBAction)nextButtonAction:(id)sender {
+    [self.goQuizzlyButton setTitle:@"Loading..." forState:UIControlStateNormal];
     quizzlerId = [self.quizzCodeTextField text];
     if (quizzlerId == nil || quizzlerId.length == 0) {
         [self showAlertMessageWithTitle:ERROR withMessage:ERROR_CODE_EMPTY];
+        //[self.goQuizzlyButton setTitle:GO_QUIZZ_BUTTON_TITLE forState:UIControlStateNormal];
         return;
     }
-    self.activityIndicator.hidden = NO;
-    [self.activityIndicator startAnimating];
     [self startQuestions];
 }
 
@@ -116,7 +116,6 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (response) {
                     if (response.error) {
-                        [self->_activityIndicator stopAnimating];
                         [self showAlertMessageWithTitle:ERROR withMessage:ERROR_CONNECTION];
                     }
                     NSError *parseError = nil;
@@ -138,11 +137,10 @@
     NSLog(@"Fetching questions for: %@", quizzlerId);
     [QuizzlerData requestQuestionsByID:quizzlerId complition:^(SimpleAPIResponse *response) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_activityIndicator stopAnimating];
             if (response) {
                 if (response.error) {
-                    //[self->_activityIndicator stopAnimating];
                     [self showAlertMessageWithTitle:ERROR withMessage:ERROR_CONNECTION];
+                    //[self.goQuizzlyButton setTitle:GO_QUIZZ_BUTTON_TITLE forState:UIControlStateNormal];
                 }
                 else {
                     
@@ -172,10 +170,13 @@
                                    preferredStyle:UIAlertControllerStyleAlert];
 
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-       handler:^(UIAlertAction * action) {}];
+       handler:^(UIAlertAction * action) {
+    }];
 
     [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    [self presentViewController:alert animated:YES completion:^(){
+        [self.goQuizzlyButton setTitle:GO_QUIZZ_BUTTON_TITLE forState:UIControlStateNormal];
+    }];
 }
 
 @end

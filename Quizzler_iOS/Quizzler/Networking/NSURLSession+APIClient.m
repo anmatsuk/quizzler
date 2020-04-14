@@ -14,6 +14,7 @@
 - (NSURLSessionDataTask *)dataTaskWithAPIRequest:(APIRequest*)request
                                         completion:(APIClientCompletionBlock)completion;
 {
+    NSDate *start;
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[request url]];
     [urlRequest setHTTPMethod:HTTPMethodString([request method])];
     if ([request params]) {
@@ -22,6 +23,7 @@
 
         NSData *jsonBodyData = [NSJSONSerialization dataWithJSONObject:[request params] options:kNilOptions error:nil];
         [urlRequest setHTTPBody:jsonBodyData];
+        start = [NSDate date];
 
     }
     __block NSURLSessionDataTask *dataTask;
@@ -29,6 +31,12 @@
     {
           Class responseClass = [request responseClass];
           id<APIResponse> apiResponse = [[responseClass alloc] initWithTask:dataTask response:(NSHTTPURLResponse *)response responseObject:data error:error];
+        //need calculate delay
+        if (start) {
+            NSTimeInterval timeInterval = [start timeIntervalSinceNow];
+            NSLog(@"time: %f", (0.5f + timeInterval));
+            [NSThread sleepForTimeInterval:(0.5f + timeInterval)];
+        }
           dispatch_async(dispatch_get_main_queue(), ^{
               if (completion) { completion(apiResponse); }
           });
