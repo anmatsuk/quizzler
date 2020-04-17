@@ -25,15 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabBarController.tabBar.hidden = NO;
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:PRIVACY_POLICY_TEXT attributes:nil];
-    NSRange linkRange = NSMakeRange(0, [attributedString length]);
-    NSDictionary *linkAttributes = @{ NSForegroundColorAttributeName : [UIColor colorWithRed:0.05 green:0.4 blue:0.65 alpha:1.0],
-                                      NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle) };
-    [attributedString setAttributes:linkAttributes range:linkRange];
-    self.privacyPolicyLabel.attributedText = attributedString;
-    self.privacyPolicyLabel.userInteractionEnabled = YES;
-    [self.privacyPolicyLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapOnLabel:)]];
     
     self.goQuizzlyButton.layer.cornerRadius = 6;
     self.quizzCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
@@ -41,6 +32,12 @@
               initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapper];
+
+//    Set tab bar item image
+    UIImage *img = [UIImage imageNamed:@"go"];
+    self.tabBarController.tabBar.items.firstObject.image = img;
+
+    
 }
 
 
@@ -56,7 +53,6 @@
     quizzlerId = [self.quizzCodeTextField text];
     if (quizzlerId == nil || quizzlerId.length == 0) {
         [self showAlertMessageWithTitle:ERROR withMessage:ERROR_CODE_EMPTY];
-        //[self.goQuizzlyButton setTitle:GO_QUIZZ_BUTTON_TITLE forState:UIControlStateNormal];
         return;
     }
     [self startQuestions];
@@ -97,16 +93,6 @@
 
 #pragma mark -
 #pragma mark: Functions
-
-- (void)handleTapOnLabel:(UITapGestureRecognizer *)tapGesture
-{
-    NSURL *URL = [NSURL URLWithString:POLICY_LINK];
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)]) {
-        [[UIApplication sharedApplication] openURL:URL options:@{}
-           completionHandler:^(BOOL success) {
-        }];
-    }
-}
 
 - (void) startQuestions{
     NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];

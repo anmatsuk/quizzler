@@ -11,6 +11,15 @@
 
 //Button
 #define GO_QUIZZ_BUTTON_TITLE @"Start"
+#define SEND_TEXT @"Send"
+
+//String
+#define SEND_FEEDBACK_TEXT @"Send Feedback"
+#define OPEN_SOURCE_TEXT @"Open Source attributions"
+#define PRIVACY_POLICY_TEXT @"Privacy Policy"
+#define VERSION_TEXT @"Version"
+#define POWERED_BY_TEXT @"Powered by"
+#define GO_QUIZZY_LAB @"GOQuizzy Lab."
 
 /*
  messages
@@ -20,8 +29,8 @@
 #define ERROR_CODE_EMPTY @"Quizz code is empty"
 #define ERROR_CONNECTION @"Something went wrong. Please try again ..."
 #define FINISH_MESSAGE @"Congratulations! \n You've successfully finished your quiz."
+#define EMPTY_FEEDBACK @"Feedback is empty"
 
-#define PRIVACY_POLICY_TEXT @"2020, Privacy Policy"
 /*
  urls definitions
  */

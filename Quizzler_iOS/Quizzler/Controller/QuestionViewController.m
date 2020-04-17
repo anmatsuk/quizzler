@@ -69,21 +69,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter]
-       addObserver:self selector:@selector(orientationChanged:)
-       name:UIDeviceOrientationDidChangeNotification
-       object:[UIDevice currentDevice]];
-    
-    UIInterfaceOrientation orientation = [[[[[UIApplication sharedApplication] windows] firstObject] windowScene] interfaceOrientation];
-
-    if(orientation == UIInterfaceOrientationLandscapeLeft) {
-        self.questionTextBottomConstraint.constant = -75;
-    }
-    else if(orientation == UIInterfaceOrientationLandscapeRight) {
-        self.questionTextBottomConstraint.constant = -75;
-    }
-
     //Buttons:
     self.answerButton1.layer.borderWidth = 1.0f;
     self.answerButton1.layer.cornerRadius = 6;
@@ -108,22 +93,6 @@
     
     self.navigationController.navigationBar.topItem.backBarButtonItem = [[UIBarButtonItem alloc]
     initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:nil action:nil];
-}
-
-- (void) orientationChanged:(NSNotification *)note
-{
-   UIDevice * device = note.object;
-   switch(device.orientation)
-   {
-       case UIDeviceOrientationPortrait:
-       case UIDeviceOrientationPortraitUpsideDown:
-           self.questionTextBottomConstraint.constant = -20;
-       break;
-
-       default:
-           self.questionTextBottomConstraint.constant = -75;
-       break;
-   };
 }
 
 - (void) showButtons {

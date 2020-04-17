@@ -16,6 +16,21 @@
 
 @implementation QuizzlerData
 
++ (NSURLSessionDataTask *) sendFeedback:(NSString *) feedbackText forEmail:(NSString*) email complition: (UsersResponseBlock)completion{
+    NSString *urlString = [NSString stringWithFormat:@"%@%@", ENDPOINT, @"/feedback"];
+    NSDictionary *params = @{@"email": email, @"text": feedbackText};
+    APIRequest *request = [[APIRequest alloc] init];
+    [request setResponseClass:[JSONAPIResponse class]];
+    [request setUrl:[NSURL URLWithString:urlString]];
+    [request setMethod:POST];
+    [request setParams:params];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithAPIRequest:request completion:completion];
+    [task resume];
+    return task;
+}
+
 + (NSURLSessionDataTask *) generateDeviceId:(UsersResponseBlock)completion {
     NSString *urlString = [NSString stringWithFormat:@"%@", DEVICEID_URL];
     
