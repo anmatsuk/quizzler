@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *poweredLabel;
 @property (weak, nonatomic) IBOutlet UILabel *withLoveLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImage;
 
 @end
 

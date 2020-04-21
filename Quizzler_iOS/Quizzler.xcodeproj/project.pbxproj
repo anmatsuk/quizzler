@@ -21,6 +21,7 @@
 		DE0D90E6244004D100223FA0 /* NSURLSession+APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E5244004D100223FA0 /* NSURLSession+APIClient.m */; };
 		DE0D90EA244037F600223FA0 /* QuizzlerData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E9244037F600223FA0 /* QuizzlerData.m */; };
 		DE61433624493FCF00ECB0A9 /* SendFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE61433524493FCF00ECB0A9 /* SendFeedbackViewController.m */; };
+		DE614339244A34B200ECB0A9 /* OpenSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE614338244A34B200ECB0A9 /* OpenSourceViewController.m */; };
 		DE81D1EF24418F5600215A5E /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D1ED24418F5600215A5E /* QuestionViewController.m */; };
 		DE81D1F924455E6800215A5E /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D1F724455E6700215A5E /* FLAnimatedImage.m */; };
 		DE81D1FA24455E6800215A5E /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D1F824455E6700215A5E /* FLAnimatedImageView.m */; };
@@ -56,6 +57,8 @@
 		DE0D90E9244037F600223FA0 /* QuizzlerData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizzlerData.m; sourceTree = "<group>"; };
 		DE61433424493FCF00ECB0A9 /* SendFeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendFeedbackViewController.h; sourceTree = "<group>"; };
 		DE61433524493FCF00ECB0A9 /* SendFeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendFeedbackViewController.m; sourceTree = "<group>"; };
+		DE614337244A34B200ECB0A9 /* OpenSourceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSourceViewController.h; sourceTree = "<group>"; };
+		DE614338244A34B200ECB0A9 /* OpenSourceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenSourceViewController.m; sourceTree = "<group>"; };
 		DE81D1EC24418F5600215A5E /* QuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
 		DE81D1ED24418F5600215A5E /* QuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
 		DE81D1F524455E6700215A5E /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				DED92412244652D700F6868B /* AboutUsControllerViewController.m */,
 				DE61433424493FCF00ECB0A9 /* SendFeedbackViewController.h */,
 				DE61433524493FCF00ECB0A9 /* SendFeedbackViewController.m */,
+				DE614337244A34B200ECB0A9 /* OpenSourceViewController.h */,
+				DE614338244A34B200ECB0A9 /* OpenSourceViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE614339244A34B200ECB0A9 /* OpenSourceViewController.m in Sources */,
 				DED92413244652D700F6868B /* AboutUsControllerViewController.m in Sources */,
 				DE0D90D3243FF33300223FA0 /* main.m in Sources */,
 				DE0D90E6244004D100223FA0 /* NSURLSession+APIClient.m in Sources */,
@@ -399,9 +405,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 9YFVFFG43K;
 				INFOPLIST_FILE = Quizzler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,9 +426,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 9YFVFFG43K;
 				INFOPLIST_FILE = Quizzler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

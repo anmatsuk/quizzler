@@ -19,14 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //To make the border look very close to a UITextField
-    [self.sendFeedbackTextView.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
-    [self.sendFeedbackTextView.layer setBorderWidth:1.0];
+    [self.sendFeedbackTextView.layer setBorderColor:[[[UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f] colorWithAlphaComponent:0.5] CGColor]];
+    [self.sendFeedbackTextView.layer setBorderWidth:0.8];
     self.sendFeedbackButton.layer.cornerRadius = 6;
+    self.feedbackInfoLabel.text = FEEDBACK_TEXT;
     
     //The rounded corner part, where you specify your view's corner radius:
     self.sendFeedbackTextView.layer.cornerRadius = 5;
     self.sendFeedbackTextView.text = @"Your feedback";
-    self.sendFeedbackTextView.textColor = [UIColor systemGray3Color]; //optional
+    self.sendFeedbackTextView.textColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f];
 }
 - (IBAction)sendFeedbackButtonAction:(id)sender {
     //send feedback
@@ -73,7 +74,7 @@
 - (void)textViewDidEndEditing:(UITextView *)textView {
     if ([self.sendFeedbackTextView.text isEqualToString:@""]) {
         self.sendFeedbackTextView.text = @"Your feedback";
-        self.sendFeedbackTextView.textColor = [UIColor systemGray3Color]; //optional
+        self.sendFeedbackTextView.textColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f];
     }
     [self.sendFeedbackTextView resignFirstResponder];
 }

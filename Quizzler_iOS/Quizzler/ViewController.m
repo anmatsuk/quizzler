@@ -34,8 +34,9 @@
     [self.view addGestureRecognizer:tapper];
 
 //    Set tab bar item image
-    UIImage *img = [UIImage imageNamed:@"go"];
+    UIImage *img = [UIImage imageNamed:@"home"];
     self.tabBarController.tabBar.items.firstObject.image = img;
+    self.tabBarController.tabBar.items.lastObject.image = [UIImage imageNamed:@"about"];;
 
     
 }

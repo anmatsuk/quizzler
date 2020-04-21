@@ -23,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UILabel *questionText;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressBarWidth;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 //buttons:
 @property (weak, nonatomic) IBOutlet AnswerButton *answerButton1;

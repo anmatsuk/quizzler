@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *sendFeedbackButton;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
+@property (weak, nonatomic) IBOutlet UILabel *feedbackInfoLabel;
 
 @end
