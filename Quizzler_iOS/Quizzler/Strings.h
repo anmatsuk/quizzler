@@ -19,6 +19,7 @@
 #define PRIVACY_POLICY_TEXT @"Privacy Policy"
 #define VERSION_TEXT @"Version"
 #define POWERED_BY_TEXT @"Powered by"
+#define ENTER_YOUR_FEEDBACK_TEXT @"Enter your feedback here:"
 #define GO_QUIZZY_LAB @"GoQuizzy Lab."
 #define FEEDBACK_TEXT @"Thank you for using GoQuizzly. We really appreciate you choosing our App for your quizzes.\n\nTo help us to improve, we'd like to ask you to provide some feedback which helps us impliment new features or fix bugs you faced."
 

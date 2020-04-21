@@ -24,7 +24,6 @@
     self.versionLabel.text = [NSString stringWithFormat:@"%@ %@ (%@)", VERSION_TEXT, bVersion, version];
     self.poweredLabel.text = [NSString stringWithFormat:@"%@ %@", POWERED_BY_TEXT, GO_QUIZZY_LAB];
     self.withLoveLabel.text = [NSString stringWithFormat:@"Made with 🐭 in San Jose"];
-    [self.navigationController.navigationBar setValue:@(YES) forKeyPath:@"hidesShadow"];
     self.iconImage.layer.cornerRadius = 6;
 }
 
@@ -76,29 +75,10 @@
     return 60;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 40;
+    return 0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.0f;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"About";
-}
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-
-    UILabel *myLabel = [[UILabel alloc] init];
-    myLabel.frame = CGRectMake(20, 10, 320, 20);
-    myLabel.font = [UIFont boldSystemFontOfSize:27];
-    myLabel.text = [self tableView:tableView titleForHeaderInSection:section];
-    myLabel.backgroundColor = [UIColor clearColor];
-    UIView *headerView = [[UIView alloc] init];
-    [headerView addSubview:myLabel];
-    headerView.backgroundColor = [UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1.0f];
-    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, headerView.frame.size.height, headerView.frame.size.width, 1)];
-    [separator setBackgroundColor:[UIColor redColor]];
-    [headerView addSubview:separator];
-    return headerView;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

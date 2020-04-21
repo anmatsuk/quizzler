@@ -19,21 +19,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //To make the border look very close to a UITextField
-    [self.sendFeedbackTextView.layer setBorderColor:[[[UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f] colorWithAlphaComponent:0.5] CGColor]];
-    [self.sendFeedbackTextView.layer setBorderWidth:0.8];
+    [self.sendFeedbackTextView.layer setBorderColor:[[[UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f] colorWithAlphaComponent:0.9] CGColor]];
+    [self.sendFeedbackTextView.layer setBorderWidth:1.0];
     self.sendFeedbackButton.layer.cornerRadius = 6;
     self.feedbackInfoLabel.text = FEEDBACK_TEXT;
     
     //The rounded corner part, where you specify your view's corner radius:
     self.sendFeedbackTextView.layer.cornerRadius = 5;
-    self.sendFeedbackTextView.text = @"Your feedback";
+    self.sendFeedbackTextView.text = ENTER_YOUR_FEEDBACK_TEXT;
     self.sendFeedbackTextView.textColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f];
 }
 - (IBAction)sendFeedbackButtonAction:(id)sender {
     //send feedback
     NSString *email = _emailTextField.text;
     NSString *feedback = _sendFeedbackTextView.text;
-    if ([feedback isEqualToString:@"Your feedback"]) {
+    if ([feedback isEqualToString:ENTER_YOUR_FEEDBACK_TEXT]) {
         [self showAlertMessageWithTitle:@"Error" withMessage:EMPTY_FEEDBACK];
         return;
     }
@@ -63,7 +63,7 @@
 #pragma mark: UITextView
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-    if ([self.sendFeedbackTextView.text isEqualToString: @"Your feedback"])
+    if ([self.sendFeedbackTextView.text isEqualToString: ENTER_YOUR_FEEDBACK_TEXT])
     {
         self.sendFeedbackTextView.text = @"";
         self.sendFeedbackTextView.textColor = [UIColor blackColor];
@@ -73,7 +73,7 @@
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
     if ([self.sendFeedbackTextView.text isEqualToString:@""]) {
-        self.sendFeedbackTextView.text = @"Your feedback";
+        self.sendFeedbackTextView.text = ENTER_YOUR_FEEDBACK_TEXT;
         self.sendFeedbackTextView.textColor = [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f];
     }
     [self.sendFeedbackTextView resignFirstResponder];
