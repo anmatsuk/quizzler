@@ -10,6 +10,7 @@
 #import "QuizzlerData.h"
 #import "Strings.h"
 #import "FLAnimatedImage.h"
+//#import <QuartzCore/QuartzCore.h>
 
 @interface QuestionViewController () {
     int questionIndex;
@@ -37,8 +38,17 @@
     self.gifBackgroudView.layer.cornerRadius = 18;
     self.blurView.hidden = YES;
     self.gifBackgroudView.hidden = YES;
-
     
+    //cat shadow
+    self.gifBackgroudView.layer.shadowRadius  = 20.5f;
+    self.gifBackgroudView.layer.shadowColor   = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.4].CGColor;
+    self.gifBackgroudView.layer.shadowOffset  = CGSizeMake(0.0f, 0.0f);
+    self.gifBackgroudView.layer.shadowOpacity = 0.9f;
+    self.gifBackgroudView.layer.masksToBounds = NO;
+    UIEdgeInsets shadowInsets = UIEdgeInsetsMake(0, 0, -1.5f, 0);
+    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:UIEdgeInsetsInsetRect(self.gifBackgroudView.bounds, shadowInsets)];
+    self.gifBackgroudView.layer.shadowPath = shadowPath.CGPath;
+
     params = [[NSMutableDictionary alloc] init];
     NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
     [params setValue:[defaults objectForKey:@"deviceId"] forKey:@"deviceId"];

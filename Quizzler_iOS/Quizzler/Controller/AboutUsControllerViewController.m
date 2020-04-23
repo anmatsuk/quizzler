@@ -25,6 +25,7 @@
     self.poweredLabel.text = [NSString stringWithFormat:@"%@ %@", POWERED_BY_TEXT, GO_QUIZZY_LAB];
     self.withLoveLabel.text = [NSString stringWithFormat:@"Made with 🐭 in San Jose"];
     self.iconImage.layer.cornerRadius = 6;
+    
 }
 
 #pragma mark -
