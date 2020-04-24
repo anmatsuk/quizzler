@@ -7,31 +7,42 @@
 //
 
 #import "NSURLSession+APIClient.h"
+#import "Strings.h"
 
 @implementation NSURLSession (APIClient)
 
 - (NSURLSessionDataTask *)dataTaskWithAPIRequest:(APIRequest*)request
                                         completion:(APIClientCompletionBlock)completion;
 {
-    //NSURL *requestUrl = [NSURL urlWithString:request.path baseURL:request.url parameters:request.params];
-    //NSURLRequest *httpRequest = [NSURLRequest requestWithMethod:request.method url:requestUrl headers:request.headers];
-    NSMutableURLRequest *httpRequest = [[NSMutableURLRequest alloc] initWithURL:request.url];
-    [httpRequest setHTTPMethod: HTTPMethodString(request.method)];
-    [httpRequest setAllHTTPHeaderFields:request.headers];
-    
-    __block NSURLSessionDataTask *task;
-    task = [self dataTaskWithRequest:httpRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        Class responseClass = [request responseClass];
-        id<APIResponse> apiResponse = [[responseClass alloc] initWithTask:task response:(NSHTTPURLResponse *)response responseObject:data error:error];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (completion) { completion(apiResponse); }
-        });
-    }];
+    NSDate *start;
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[request url]];
+    [urlRequest setHTTPMethod:HTTPMethodString([request method])];
+    if ([request params]) {
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
 
-    [task resume];
-    return task;
+        NSData *jsonBodyData = [NSJSONSerialization dataWithJSONObject:[request params] options:kNilOptions error:nil];
+        [urlRequest setHTTPBody:jsonBodyData];
+        start = [NSDate date];
+
+    }
+    __block NSURLSessionDataTask *dataTask;
+    dataTask = [self dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    {
+          Class responseClass = [request responseClass];
+          id<APIResponse> apiResponse = [[responseClass alloc] initWithTask:dataTask response:(NSHTTPURLResponse *)response responseObject:data error:error];
+        //need calculate delay
+        if (start) {
+            NSTimeInterval timeInterval = [start timeIntervalSinceNow];
+            NSLog(@"time: %f", (0.5f + timeInterval));
+            [NSThread sleepForTimeInterval:(0.5f + timeInterval)];
+        }
+          dispatch_async(dispatch_get_main_queue(), ^{
+              if (completion) { completion(apiResponse); }
+          });
+    }];
+    [dataTask resume];
+    return dataTask;
 }
 
 @end

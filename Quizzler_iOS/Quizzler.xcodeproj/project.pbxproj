@@ -20,10 +20,18 @@
 		DE0D90E32440015A00223FA0 /* APIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E22440015A00223FA0 /* APIResponse.m */; };
 		DE0D90E6244004D100223FA0 /* NSURLSession+APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E5244004D100223FA0 /* NSURLSession+APIClient.m */; };
 		DE0D90EA244037F600223FA0 /* QuizzlerData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0D90E9244037F600223FA0 /* QuizzlerData.m */; };
+		DE61433624493FCF00ECB0A9 /* SendFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE61433524493FCF00ECB0A9 /* SendFeedbackViewController.m */; };
+		DE614339244A34B200ECB0A9 /* OpenSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE614338244A34B200ECB0A9 /* OpenSourceViewController.m */; };
+		DE81D1EF24418F5600215A5E /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D1ED24418F5600215A5E /* QuestionViewController.m */; };
+		DE81D1F924455E6800215A5E /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D1F724455E6700215A5E /* FLAnimatedImage.m */; };
+		DE81D1FA24455E6800215A5E /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D1F824455E6700215A5E /* FLAnimatedImageView.m */; };
+		DE81D1FE2445A79700215A5E /* cat_cropped.gif in Resources */ = {isa = PBXBuildFile; fileRef = DE81D1FD2445A79700215A5E /* cat_cropped.gif */; };
+		DE81D2012445AB3D00215A5E /* AnswerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE81D2002445AB3D00215A5E /* AnswerButton.m */; };
+		DED92413244652D700F6868B /* AboutUsControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED92412244652D700F6868B /* AboutUsControllerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DE0D90BA243FF32F00223FA0 /* Quizzler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizzler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0D90BA243FF32F00223FA0 /* GoQuizzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoQuizzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0D90BD243FF32F00223FA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE0D90BE243FF32F00223FA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE0D90C0243FF32F00223FA0 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +55,21 @@
 		DE0D90E5244004D100223FA0 /* NSURLSession+APIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+APIClient.m"; sourceTree = "<group>"; };
 		DE0D90E8244037F600223FA0 /* QuizzlerData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizzlerData.h; sourceTree = "<group>"; };
 		DE0D90E9244037F600223FA0 /* QuizzlerData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizzlerData.m; sourceTree = "<group>"; };
+		DE61433424493FCF00ECB0A9 /* SendFeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendFeedbackViewController.h; sourceTree = "<group>"; };
+		DE61433524493FCF00ECB0A9 /* SendFeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendFeedbackViewController.m; sourceTree = "<group>"; };
+		DE614337244A34B200ECB0A9 /* OpenSourceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSourceViewController.h; sourceTree = "<group>"; };
+		DE614338244A34B200ECB0A9 /* OpenSourceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenSourceViewController.m; sourceTree = "<group>"; };
+		DE81D1EC24418F5600215A5E /* QuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
+		DE81D1ED24418F5600215A5E /* QuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
+		DE81D1F524455E6700215A5E /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		DE81D1F624455E6700215A5E /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		DE81D1F724455E6700215A5E /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		DE81D1F824455E6700215A5E /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		DE81D1FD2445A79700215A5E /* cat_cropped.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cat_cropped.gif; sourceTree = "<group>"; };
+		DE81D1FF2445AB3D00215A5E /* AnswerButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnswerButton.h; sourceTree = "<group>"; };
+		DE81D2002445AB3D00215A5E /* AnswerButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnswerButton.m; sourceTree = "<group>"; };
+		DED92411244652D700F6868B /* AboutUsControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsControllerViewController.h; sourceTree = "<group>"; };
+		DED92412244652D700F6868B /* AboutUsControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsControllerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +94,7 @@
 		DE0D90BB243FF32F00223FA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE0D90BA243FF32F00223FA0 /* Quizzler.app */,
+				DE0D90BA243FF32F00223FA0 /* GoQuizzy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +102,8 @@
 		DE0D90BC243FF32F00223FA0 /* Quizzler */ = {
 			isa = PBXGroup;
 			children = (
+				DE81D1F124455DEE00215A5E /* Library */,
+				DE81D1EB24418F2B00215A5E /* Controller */,
 				DE0D90E72440370300223FA0 /* Model */,
 				DE0D90D9243FF36800223FA0 /* Networking */,
 				DE0D90BD243FF32F00223FA0 /* AppDelegate.h */,
@@ -88,6 +113,7 @@
 				DE0D90C3243FF32F00223FA0 /* ViewController.h */,
 				DE0D90C4243FF32F00223FA0 /* ViewController.m */,
 				DE0D90C6243FF32F00223FA0 /* Main.storyboard */,
+				DE81D1FD2445A79700215A5E /* cat_cropped.gif */,
 				DE0D90CC243FF33300223FA0 /* Assets.xcassets */,
 				DE0D90CE243FF33300223FA0 /* LaunchScreen.storyboard */,
 				DE0D90D1243FF33300223FA0 /* Info.plist */,
@@ -122,6 +148,34 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DE81D1EB24418F2B00215A5E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE81D1EC24418F5600215A5E /* QuestionViewController.h */,
+				DE81D1ED24418F5600215A5E /* QuestionViewController.m */,
+				DE81D1FF2445AB3D00215A5E /* AnswerButton.h */,
+				DE81D2002445AB3D00215A5E /* AnswerButton.m */,
+				DED92411244652D700F6868B /* AboutUsControllerViewController.h */,
+				DED92412244652D700F6868B /* AboutUsControllerViewController.m */,
+				DE61433424493FCF00ECB0A9 /* SendFeedbackViewController.h */,
+				DE61433524493FCF00ECB0A9 /* SendFeedbackViewController.m */,
+				DE614337244A34B200ECB0A9 /* OpenSourceViewController.h */,
+				DE614338244A34B200ECB0A9 /* OpenSourceViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DE81D1F124455DEE00215A5E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				DE81D1F624455E6700215A5E /* FLAnimatedImage.h */,
+				DE81D1F724455E6700215A5E /* FLAnimatedImage.m */,
+				DE81D1F524455E6700215A5E /* FLAnimatedImageView.h */,
+				DE81D1F824455E6700215A5E /* FLAnimatedImageView.m */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,7 +193,7 @@
 			);
 			name = Quizzler;
 			productName = Quizzler;
-			productReference = DE0D90BA243FF32F00223FA0 /* Quizzler.app */;
+			productReference = DE0D90BA243FF32F00223FA0 /* GoQuizzy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -181,6 +235,7 @@
 			files = (
 				DE0D90D0243FF33300223FA0 /* LaunchScreen.storyboard in Resources */,
 				DE0D90CD243FF33300223FA0 /* Assets.xcassets in Resources */,
+				DE81D1FE2445A79700215A5E /* cat_cropped.gif in Resources */,
 				DE0D90C8243FF32F00223FA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,15 +247,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE614339244A34B200ECB0A9 /* OpenSourceViewController.m in Sources */,
+				DED92413244652D700F6868B /* AboutUsControllerViewController.m in Sources */,
 				DE0D90D3243FF33300223FA0 /* main.m in Sources */,
 				DE0D90E6244004D100223FA0 /* NSURLSession+APIClient.m in Sources */,
 				DE0D90E32440015A00223FA0 /* APIResponse.m in Sources */,
 				DE0D90C5243FF32F00223FA0 /* ViewController.m in Sources */,
+				DE61433624493FCF00ECB0A9 /* SendFeedbackViewController.m in Sources */,
 				DE0D90E0243FFE4000223FA0 /* APIRequest.m in Sources */,
 				DE0D90DC243FF60700223FA0 /* HTTPMethod.m in Sources */,
+				DE81D1EF24418F5600215A5E /* QuestionViewController.m in Sources */,
 				DE0D90BF243FF32F00223FA0 /* AppDelegate.m in Sources */,
+				DE81D1F924455E6800215A5E /* FLAnimatedImage.m in Sources */,
 				DE0D90C2243FF32F00223FA0 /* SceneDelegate.m in Sources */,
 				DE0D90CB243FF32F00223FA0 /* Quizzler.xcdatamodeld in Sources */,
+				DE81D2012445AB3D00215A5E /* AnswerButton.m in Sources */,
+				DE81D1FA24455E6800215A5E /* FLAnimatedImageView.m in Sources */,
 				DE0D90EA244037F600223FA0 /* QuizzlerData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,15 +403,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U4FT3RM5BF;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = 9YFVFFG43K;
 				INFOPLIST_FILE = Quizzler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.anastasiamatsuk.quizzler.Quizzler;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sportmax.goquizzy;
+				PRODUCT_NAME = GoQuizzy;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -358,15 +424,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U4FT3RM5BF;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = 9YFVFFG43K;
 				INFOPLIST_FILE = Quizzler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.anastasiamatsuk.quizzler.Quizzler;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sportmax.goquizzy;
+				PRODUCT_NAME = GoQuizzy;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

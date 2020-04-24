@@ -62,4 +62,8 @@
     }
 }
 
+- (NSInteger) statusCode {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)[self response];
+    return httpResponse.statusCode;
+}
 @end
